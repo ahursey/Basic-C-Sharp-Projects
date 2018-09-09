@@ -11,8 +11,9 @@ namespace TwentyOne
         static void Main(string[] args)
         {
             Deck deck = new Deck();
+            //deck = Shuffle(deck);
             deck = Shuffle(deck);
-            
+
             foreach (Card card in deck.Cards)
             {
                 Console.WriteLine(card.Face + " of " + card.Suit);
@@ -23,9 +24,9 @@ namespace TwentyOne
 
         }
 
-        public static Deck Shuffle (Deck deck)
+        public static Deck Shuffle (Deck deck, int times = 1)
         {
-
+             
             List<Card> TempList = new List<Card>();
             Random random = new Random();
 
@@ -39,5 +40,14 @@ namespace TwentyOne
             return deck;
 
         }
+
+        //public static Deck Shuffle(Deck deck, int times)
+        //{
+        //    for (int i = object; i < times; i++)
+        //    {
+        //        deck = Shuffle(deck);
+        //    }
+        //    return deck;
+        //}
     }
 }
